@@ -1,0 +1,60 @@
+#container, #shoppingcart {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid;
+    padding: 2px;
+}
+
+#shoppingcart {
+    display: none;
+}
+
+button {
+    width: 100px;
+}
+
+.row {
+    display: flex;
+}
+
+#container .row:nth-child(even) {
+    background-color:darkcyan;
+}
+
+#container .row:nth-child(odd) {
+    background-color: darkgoldenrod;
+}
+
+.row div:nth-child(1) {
+    width: 10%;
+}
+
+.row div:nth-child(2) {
+    width: 20%;
+}
+
+.row div:nth-child(3) {
+    width: 20%;
+}
+
+.row div:nth-child(4) {
+    width: 10%;
+}
+
+.row div:nth-child(5) {
+    width: 10%;
+    text-align: right;
+}
+
+.row div:nth-child(6) {
+    width: 30%;
+    text-align: right;
+}
+
+.row div:nth-child(7) {
+    width: 20%;
+    text-align: right;
+}
+

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "brand": "Toshiba",
+    "type": "Satellite",
+    "memory": "8GB",
+    "price": 800
+  },
+  {
+    "id": 2,
+    "brand": "Acer",
+    "type": "Aspire",
+    "memory": "16GB",
+    "price": 1200
+  },
+  {
+    "id": 3,
+    "brand": "Apple",
+    "type": "MacBook Pro",
+    "memory": "8GB",
+    "price": 1800
+  },
+  {
+    "id": 4,
+    "brand": "HP",
+    "type": "ENVI",
+    "memory": "8GB",
+    "price": 2300
+  },
+  {
+    "id": 5,
+    "brand": "Koffiemachine",
+    "type": "BOSCH",
+    "memory": "1GB",
+    "price": 875
+  },
+  {
+    "id": 6,
+    "brand": "Samsung",
+    "type": "S22",
+    "memory": "32GB",
+    "price": 999
+  }
+]
