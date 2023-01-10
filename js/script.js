@@ -85,9 +85,52 @@ document.addEventListener("DOMContentLoaded",function () {
                 b.innerText = "Delete";
                 ele.appendChild(b);
                 r.appendChild(ele);
+
+                // voeg een + button toe
+                ele = document.createElement("DIV");
+                b = document.createElement("button");
+                b.addEventListener("click",function () {
+                    plus(item,r);
+                });
+                b.innerText = "+";
+                ele.appendChild(b);
+                r.appendChild(ele);
+
+
+                // voeg een - button toe
+                ele = document.createElement("DIV");
+                b = document.createElement("button");
+                b.addEventListener("click",function () {
+                    minus(item,r);
+                });
+                b.innerText = "-";
+                ele.appendChild(b);
+                r.appendChild(ele);
             });
 
         }
+
+        function plus(item,ele) {
+            let obj = cart.find(o => o.id === item.id);
+            if(obj != null) {
+                obj.number++;
+            }
+            updatecart()
+            maakCookie("shoppingcart",JSON.stringify(cart),7);
+        }
+
+        function minus(item,ele) {
+            let obj = cart.find(o => o.id === item.id);
+            if(obj != null) {
+                obj.number--;
+                if(obj.number <= 0) {
+                    removefromcart(item,ele);
+                }
+            }
+            updatecart()
+            maakCookie("shoppingcart",JSON.stringify(cart),7);
+        }
+
 
         // lees de database en maak HTML tabel
         function readitems(data) {
