@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded",function () {
 
                     r.appendChild(ele);
                 }
+                // delete knop toevoegen
                 let ele = document.createElement("DIV");
                 let b = document.createElement("button");
                 b.addEventListener("click",function () {
@@ -114,7 +115,9 @@ document.addEventListener("DOMContentLoaded",function () {
         // add extra item
         function plus(item,ele) {
             let obj = cart.find(o => o.id === item.id);
+
             if(obj != null) {
+                //console.log(obj);
                 obj.number++;
             }
             updatecart()
