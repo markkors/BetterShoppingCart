@@ -13,7 +13,6 @@ let formatter = new Intl.NumberFormat('nl-NL', {
 
 
 // updated code to get async data from json file
-
 async function readJSON() {
     const response = await fetch('data.json');
     const data = await response.json();
@@ -28,7 +27,7 @@ if(cart == null || cart == undefined || cart.length == 0) {
 }
 
 // helper functie
-// totaal van de winkelwagen
+// total of the cart
 function sumcart() {
     let sum = 0;
     cart.forEach((o) => {
@@ -37,8 +36,10 @@ function sumcart() {
     return sum;
 }
 
-// start e.e.a. nadat content is geladen
+// start the code after DOM is loaded
 document.addEventListener("DOMContentLoaded",function () {
+    // readJSON is async, so we need to wait for it to finish
+    // a promise is returned, so we can use .then
     readJSON().then(function(data) {
         stock=data;
         document.getElementById("total").innerText = formatter.format(sumcart())
@@ -110,6 +111,7 @@ document.addEventListener("DOMContentLoaded",function () {
 
         }
 
+        // add extra item
         function plus(item,ele) {
             let obj = cart.find(o => o.id === item.id);
             if(obj != null) {
@@ -119,6 +121,7 @@ document.addEventListener("DOMContentLoaded",function () {
             maakCookie("shoppingcart",JSON.stringify(cart),7);
         }
 
+        // subtract item
         function minus(item,ele) {
             let obj = cart.find(o => o.id === item.id);
             if(obj != null) {
