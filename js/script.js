@@ -36,6 +36,11 @@ function sumcart() {
     return sum;
 }
 
+
+function sumproduct(o) {
+    return parseFloat(o.number) * parseFloat(o.price);
+}
+
 // start the code after DOM is loaded
 document.addEventListener("DOMContentLoaded",function () {
     // readJSON is async, so we need to wait for it to finish
@@ -78,8 +83,14 @@ document.addEventListener("DOMContentLoaded",function () {
 
                     r.appendChild(ele);
                 }
-                // delete knop toevoegen
+
+                // add total
                 let ele = document.createElement("DIV");
+                ele.innerText = formatter.format(sumproduct(item));
+                r.appendChild(ele);
+
+                // delete knop toevoegen
+                ele = document.createElement("DIV");
                 let b = document.createElement("button");
                 b.addEventListener("click",function () {
                     removefromcart(item,r);
@@ -119,6 +130,7 @@ document.addEventListener("DOMContentLoaded",function () {
             if(obj != null) {
                 //console.log(obj);
                 obj.number++;
+
             }
             updatecart()
             maakCookie("shoppingcart",JSON.stringify(cart),7);
